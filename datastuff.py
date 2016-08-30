@@ -79,3 +79,19 @@ def analyze(data):
     plt.tight_layout()
     
     return fig
+
+
+if __name__ == '__main__':
+
+    import pandas as pd
+    import sys
+
+    for dataset in sys.argv[1:]:
+        print(dataset)
+
+        data = pd.read_csv(dataset)
+        data['temperature'] = fahrenheit_to_celsius(data['temperature'])
+
+        fig = analyze(data)
+
+        fig.savefig(dataset + '_plot.pdf')
