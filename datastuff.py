@@ -1,3 +1,7 @@
+import statsmodels.api as sm
+import pandas as pd
+import matplotlib.pyplot as plt
+
 def fahrenheit_to_celsius(temp):
     """Convert temperature in fahrenheit to temperature in celsius.
     
